@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelvin Coins | TikTok Recharge</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #101014;
+      color: white;
+    }
+
+    header {
+      padding: 22px;
+      background: #19191f;
+      border-bottom: 1px solid #303038;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #fe2c55;
+      font-size: 27px;
+    }
+
+    header p {
+      color: #bbb;
+      margin-bottom: 0;
+    }
+
+    .hero {
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #bdbdc5;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: auto;
+      padding: 15px;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .card {
+      padding: 22px 12px;
+      background: #1c1c24;
+      border: 1px solid #34343e;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .coin {
+      font-size: 28px;
+    }
+
+    .card h3 {
+      margin: 12px 0;
+      font-size: 19px;
+    }
+
+    .price {
+      color: #25d366;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 9px;
+      padding: 13px;
+      margin-top: 12px;
+      background: #fe2c55;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .order {
+      margin-top: 30px;
+      padding: 22px;
+      border-radius: 15px;
+      background: #1c1c24;
+    }
+
+    label {
+      display: block;
+      margin-top: 16px;
+      margin-bottom: 7px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #41414c;
+      border-radius: 8px;
+      background: #101014;
+      color: white;
+      font-size: 16px;
+    }
+
+    .notice {
+      color: #bdbdc5;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 30px 15px;
+      text-align: center;
+      color: #999;
+      font-size: 13px;
+    }
+
+    @media (max-width: 360px) {
+      .packages {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Kelvin Coins 🪙</h1>
+  <p>Your TikTok coin storefront</p>
+</header>
+
+<section class="hero">
+  <h2>Recharge your TikTok</h2>
+  <p>
+    Choose your preferred coin package and prepare your order.
+    Simple, clear and convenient.
+  </p>
+</section>
+
+<main class="container">
+
+  <h2>🪙 Coin Packages</h2>
+
+  <section class="packages">
+
+    <div class="card">
+      <div class="coin">🪙</div>
+      <h3>30 Coins</h3>
+      <div class="price">₦300</div>
+      <button onclick="choosePackage(30, 300)">
+        Select Package
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="coin">🪙</div>
+      <h3>100 Coins</h3>
+      <div class="price">₦1,000</div>
+      <button onclick="choosePackage(100, 1000)">
+        Select Package
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="coin">🪙</div>
+      <h3>500 Coins</h3>
+      <div class="price">₦4,500</div>
+      <button onclick="choosePackage(500, 4500)">
+        Select Package
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="coin">🪙</div>
+      <h3>1,000 Coins</h3>
+      <div class="price">₦13,500</div>
+      <button onclick="choosePackage(1000, 13500)">
+        Select Package
+      </button>
+    </div>
+
+  </section>
+
+  <section class="order">
+    <h2>Prepare Your Order</h2>
+
+    <form id="orderForm">
+
+      <label for="username">TikTok username</label>
+      <input
+        id="username"
+        type="text"
+        placeholder="@yourusername"
+        required
+      >
+
+      <label for="package">Coin package</label>
+      <select id="package" required>
+        <option value="">Choose a package</option>
+        <option value="30">30 Coins — ₦300</option>
+        <option value="100">100 Coins — ₦1,000</option>
+        <option value="500">500 Coins — ₦4,500</option>
+        <option value="1000">1,000 Coins — ₦13,500</option>
+      </select>
+
+      <button type="submit">Review Order</button>
+
+    </form>
+
+    <p id="result" class="notice" aria-live="polite"></p>
+
+    <p class="notice">
+      Demo only: this page does not accept payments, submit orders
+      to a server, or deliver coins. Prices are sample prices and
+      should be verified before launch.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Kelvin Coins · Independent storefront concept
+  <br><br>
+  Not affiliated with or endorsed by TikTok.
+</footer>
+
+<script>
+  const prices = {
+    30: 300,
+    100: 1000,
+    500: 4500,
+    1000: 13500
+  };
+
+  function choosePackage(coins, price) {
+    document.getElementById("package").value = String(coins);
+    document.getElementById("result").textContent =
+      coins.toLocaleString() + " coins selected — ₦" +
+      price.toLocaleString() + ". Enter your username to review.";
+    document.getElementById("orderForm").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+
+  document.getElementById("orderForm").addEventListener(
+    "submit",
+    function(event) {
+      event.preventDefault();
+
+      const username =
+        document.getElementById("username").value.trim();
+
+      const coins =
+        document.getElementById("package").value;
+
+      if (!username || !prices[coins]) {
+        return;
+      }
+
+      document.getElementById("result").textContent =
+        "Order preview: " + username +
+        " — " + Number(coins).toLocaleString() +
+        " coins — ₦" + prices[coins].toLocaleString() +
+        ". No order has been submitted and no payment has been taken.";
+    }
+  );
+</script>
+
+</body>
+</html>
