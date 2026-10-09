@@ -6,59 +6,42 @@
 <title>Kelvin Coins | TikTok Coin Store</title>
 <meta name="description" content="Kelvin Coins coin package storefront prototype.">
 <style>
-:root{--pink:#fe2c55;--ink:#171717;--muted:#6b7280;--panel:#fff;--bg:#f5f6f8;--line:#e8e8eb;--green:#167d5a}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-header{background:#fff;border-bottom:1px solid var(--line);padding:18px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{font-weight:850;font-size:22px;letter-spacing:-.5px}.brand span{color:var(--pink)}
-.badge{font-size:12px;color:var(--green);background:#e7f8f1;border-radius:99px;padding:7px 10px;font-weight:700}
-main{max-width:760px;margin:0 auto;padding:18px 14px 36px}
-.hero{padding:20px 4px 12px}.hero h1{font-size:30px;line-height:1.12;margin:0 0 8px}.hero p{margin:0;color:var(--muted);line-height:1.5}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;margin:14px 0;box-shadow:0 3px 14px #00000005}
-.section-title{font-size:19px;font-weight:800;margin:0 0 14px}
-.packages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.package{border:1.5px solid var(--line);background:#f7f7f8;border-radius:14px;padding:16px 12px;cursor:pointer;text-align:center;color:var(--ink);font:inherit;min-height:104px}
-.package strong{display:block;font-size:21px}.package small{display:block;font-size:16px;color:#555;margin-top:4px}.package .old{font-size:12px;color:#8b8b8b;text-decoration:line-through;margin-top:5px}
-.package.selected{border-color:var(--pink);background:#fff3f6;box-shadow:0 0 0 1px var(--pink) inset}
-.package.custom strong{font-size:19px;margin:7px 0}
-label{display:block;font-weight:700;margin:13px 0 7px}
-input{width:100%;border:1px solid #d6d7dc;border-radius:12px;padding:14px;font:inherit;font-size:16px;background:white;color:var(--ink)}
-input:focus{outline:2px solid #ff9caf;border-color:var(--pink)}
-.hint{font-size:13px;color:var(--muted);line-height:1.45;margin:8px 0 0}
-.custom-box{display:none;margin-top:14px}.custom-box.show{display:block}
-.account-row{display:flex;align-items:center;gap:12px;background:#f8f8f9;border:1px solid var(--line);padding:12px;border-radius:14px;margin-top:12px}
-.avatar{width:52px;height:52px;border-radius:50%;background:#222;color:#fff;display:grid;place-items:center;font-size:21px;font-weight:800;flex-shrink:0}
-.account-row strong{display:block;overflow-wrap:anywhere}.account-row small{color:var(--muted);display:block;margin-top:3px}
-.price-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}.price-row:last-child{border-bottom:0}.price-row.total{font-weight:850;font-size:22px}
-button.primary{width:100%;background:var(--pink);border:0;color:#fff;font:inherit;font-weight:800;font-size:17px;padding:15px;border-radius:13px;margin-top:14px;cursor:pointer}
-button.primary:disabled{opacity:.5;cursor:not-allowed}
-.notice{background:#fff8e6;border:1px solid #f4df9d;border-radius:12px;padding:12px;color:#72551a;font-size:13px;line-height:1.45;margin-top:12px}
-.result{display:none;background:#eefbf4;border:1px solid #bde8d0;padding:13px;border-radius:12px;margin-top:12px;line-height:1.5}.result.show{display:block}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:18px 12px 30px}
-@media(min-width:600px){.packages{grid-template-columns:repeat(4,minmax(0,1fr))}.hero h1{font-size:38px}.card{padding:22px}}
+:root{--pink:#fe2c55;--pink-dark:#e51f49;--ink:#171717;--muted:#626977;--panel:#fff;--bg:#f4f5f8;--line:#e6e8ee;--green:#13795b}
+*{box-sizing:border-box}html{color-scheme:light}body{margin:0;background:linear-gradient(180deg,#fff 0,#f4f5f8 260px);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}
+header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);padding:14px max(16px,calc((100vw - 760px)/2));display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 3px 14px #17171708}
+.brand{font-weight:900;font-size:21px;letter-spacing:-.6px;white-space:nowrap}.brand span{color:var(--pink)}.badge{font-size:11px;color:var(--green);background:#e7f8f1;border-radius:99px;padding:7px 9px;font-weight:800;white-space:nowrap}
+main{max-width:760px;margin:0 auto;padding:20px 14px 38px}.hero{padding:16px 4px 15px}.eyebrow{font-size:12px;font-weight:850;letter-spacing:1.4px;text-transform:uppercase;color:var(--pink);margin:0 0 8px}.hero h1{font-size:clamp(29px,7vw,39px);line-height:1.08;letter-spacing:-1.2px;margin:0 0 10px}.hero p{margin:0;color:var(--muted);line-height:1.6;font-size:15px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:17px;margin:14px 0;box-shadow:0 8px 28px #17171708}.section-title{font-size:18px;letter-spacing:-.3px;font-weight:850;margin:0 0 14px}.section-subtitle{font-size:13px;color:var(--muted);margin:-7px 0 14px}
+.packages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.package{position:relative;border:1.5px solid var(--line);background:#fff;border-radius:15px;padding:15px 9px;cursor:pointer;text-align:center;color:var(--ink);font:inherit;min-height:115px;transition:border-color .15s,background .15s;overflow-wrap:anywhere}.package strong{display:block;font-size:19px;line-height:1.25}.package small{display:block;font-size:17px;font-weight:850;color:var(--pink);margin-top:8px}.package .old{font-size:12px;color:#858995;text-decoration:line-through;margin-top:3px}.package.selected{border-color:var(--pink);background:#fff2f5;box-shadow:0 0 0 1px var(--pink) inset}.package.selected:after{content:'â selected';display:block;font-size:10px;font-weight:800;color:var(--pink);margin-top:7px}.package.custom strong{font-size:17px;margin:8px 0}
+label{display:block;font-weight:800;font-size:14px;margin:14px 0 7px}input{width:100%;min-width:0;border:1px solid #d5d8e0;border-radius:12px;padding:14px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}input:focus{outline:3px solid #fe2c552b;border-color:var(--pink)}.hint{font-size:12px;color:var(--muted);line-height:1.55;margin:8px 0 0}.custom-box{display:none;margin-top:14px;padding:13px;background:#fafafd;border:1px solid var(--line);border-radius:14px}.custom-box.show{display:block}
+.account-row{display:flex;align-items:center;gap:12px;background:#f8f9fb;border:1px solid var(--line);padding:12px;border-radius:14px;margin-top:12px;min-width:0}.avatar{width:50px;height:50px;border-radius:50%;background:#222;color:#fff;display:grid;place-items:center;font-size:21px;font-weight:850;flex-shrink:0}.account-row>div:last-child{min-width:0}.account-row strong{display:block;overflow-wrap:anywhere}.account-row small{color:var(--muted);display:block;margin-top:3px;font-size:12px;line-height:1.4}
+.price-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}.price-row span{color:var(--muted)}.price-row strong{text-align:right;overflow-wrap:anywhere}.price-row:last-of-type{border-bottom:0}.price-row.total{font-weight:900;font-size:20px;color:var(--ink)}.price-row.total strong{color:var(--pink)}button.primary{width:100%;background:var(--pink);border:0;color:#fff;font:inherit;font-weight:850;font-size:16px;padding:15px;border-radius:13px;margin-top:14px;cursor:pointer;box-shadow:0 5px 14px #fe2c552b}button.primary:active{background:var(--pink-dark)}button.primary:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.notice{background:#fff8e7;border:1px solid #f1dfaa;border-radius:12px;padding:12px;color:#72551a;font-size:12px;line-height:1.55;margin-top:14px}.result{display:none;background:#eefbf4;border:1px solid #bde8d0;padding:14px;border-radius:12px;margin-top:12px;line-height:1.65;font-size:14px;overflow-wrap:anywhere}.result.show{display:block}footer{text-align:center;color:var(--muted);font-size:12px;padding:18px 12px 30px}
+@media(min-width:600px){.packages{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:22px}.package{padding:17px 12px}}
+@media(max-width:360px){header{padding:12px}.brand{font-size:18px}.badge{font-size:10px;padding:6px 7px}.card{padding:13px}.package strong{font-size:17px}.package small{font-size:15px}}
 </style>
 </head>
 <body>
 <header><div class="brand">ðª Kelvin <span>Coins</span></div><div class="badge">Coin store preview</div></header>
 <main>
   <section class="hero">
-    <h1>Recharge your TikTok Coins</h1>
+    <p class="eyebrow">Simple Â· Clear Â· Easy</p><h1>Recharge your TikTok Coins</h1>
     <p>Choose a package, enter the TikTok username carefully, and review your order before proceeding.</p>
   </section>
 
   <section class="card">
     <h2 class="section-title">1. Choose your coin package</h2>
     <div class="packages" id="packages">
-      <button class="package selected" data-coins="30" data-price="276" type="button"><strong>ðª 30 Coins</strong><small>â¦276</small><div class="old">Was â¦460</div></button>
-      <button class="package" data-coins="50" data-price="456" type="button"><strong>ðª 50 Coins</strong><small>â¦456</small><div class="old">Was â¦760</div></button>
-      <button class="package" data-coins="100" data-price="900" type="button"><strong>ðª 100 Coins</strong><small>â¦900</small><div class="old">Was â¦1,500</div></button>
-      <button class="package" data-coins="200" data-price="1860" type="button"><strong>ðª 200 Coins</strong><small>â¦1,860</small><div class="old">Was â¦3,100</div></button>
+      <button class="package selected" data-coins="30" data-price="276" type="button"><strong>ðª 30 Coins</strong><small>&#8358;276</small><div class="old">Was &#8358;460</div></button>
+      <button class="package" data-coins="50" data-price="456" type="button"><strong>ðª 50 Coins</strong><small>&#8358;456</small><div class="old">Was &#8358;760</div></button>
+      <button class="package" data-coins="100" data-price="900" type="button"><strong>ðª 100 Coins</strong><small>&#8358;900</small><div class="old">Was &#8358;1,500</div></button>
+      <button class="package" data-coins="200" data-price="1860" type="button"><strong>ðª 200 Coins</strong><small>&#8358;1,860</small><div class="old">Was &#8358;3,100</div></button>
       <button class="package custom" data-coins="custom" data-price="0" type="button"><strong>â¨ CUSTOM</strong><small>Choose an amount</small></button>
     </div>
     <div class="custom-box" id="customBox">
       <label for="customCoins">Number of coins (30â2,500,000)</label>
       <input id="customCoins" type="number" inputmode="numeric" min="30" max="2500000" step="1" placeholder="Enter coin amount">
-      <p class="hint">Custom prices are estimates using â¦15.50 per coin as the reference rate, with 40% off (customer pays 60%). Actual provider prices may vary.</p>
+      <p class="hint">Custom prices are estimates using &#8358;15.50 per coin as the reference rate, with 40% off (customer pays 60%). Actual provider prices may vary.</p>
     </div>
   </section>
 
@@ -78,7 +61,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:18px 12px 30p
     <div class="price-row"><span>Account</span><strong id="summaryUser">@yourusername</strong></div>
     <div class="price-row"><span>Coin package</span><strong id="summaryCoins">30 Coins</strong></div>
     <div class="price-row"><span>Discount</span><strong>40%</strong></div>
-    <div class="price-row total"><span>Estimated total</span><strong id="summaryPrice">â¦276</strong></div>
+    <div class="price-row total"><span>Estimated total</span><strong id="summaryPrice">&#8358;276</strong></div>
     <button class="primary" id="reviewBtn" type="button">Review order</button>
     <div class="result" id="result"></div>
     <div class="notice"><strong>Prototype only:</strong> this page does not accept payments, submit/store orders, or deliver Coins. Do not enter your TikTok password or payment-card details here. Before selling, verify that your supply and resale method is permitted by TikTok and your supplier.</div>
@@ -91,7 +74,7 @@ const customBox = document.getElementById('customBox');
 const customCoinsInput = document.getElementById('customCoins');
 const usernameInput = document.getElementById('username');
 let selected = {coins:30, price:276, custom:false};
-const money = n => 'â¦' + Math.round(n).toLocaleString('en-NG');
+const money = n => '&#8358;' + Math.round(n).toLocaleString('en-NG');
 function currentCoins(){
   if (!selected.custom) return selected.coins;
   const n = Number(customCoinsInput.value);
