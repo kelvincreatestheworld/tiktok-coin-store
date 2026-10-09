@@ -5,461 +5,496 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#10051f">
 <title>Kelvin Coins | Premium Coin Store</title>
-<meta name="description" content="Kelvin Coins storefront preview.">
+<meta name="description" content="Kelvin Coins TikTok coin store preview.">
 
 <style>
-:root{
-  --bg:#0b0614;
-  --panel:#171027;
-  --panel2:#211538;
-  --purple:#a855f7;
-  --purple2:#7c3aed;
-  --gold:#ffd76a;
-  --text:#fffaff;
-  --muted:#d0c4e2;
-  --line:#493264;
-  --good:#9af0bd
+:root {
+  --bg: #0b0614;
+  --panel: #171027;
+  --purple: #a855f7;
+  --gold: #ffd76a;
+  --text: #fffaff;
+  --muted: #d0c4e2;
+  --line: #493264;
 }
 
-*{box-sizing:border-box}
-html{color-scheme:dark}
+* {
+  box-sizing: border-box;
+}
 
-body{
-  margin:0;
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
   background:
-    radial-gradient(ellipse at 50% -8%,#6d28d9 0,rgba(109,40,217,.36) 20rem,transparent 39rem),
-    radial-gradient(ellipse at 100% 20%,rgba(236,72,153,.18),transparent 25rem),
-    linear-gradient(160deg,#130820 0%,#090610 60%,#10091a 100%);
-  background-attachment:fixed;
-  color:var(--text);
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  line-height:1.5;
-  min-height:100vh
+    radial-gradient(ellipse at 50% -8%, #6d28d9 0, rgba(109,40,217,.36) 20rem, transparent 39rem),
+    radial-gradient(ellipse at 100% 20%, rgba(236,72,153,.2), transparent 25rem),
+    linear-gradient(160deg, #130820 0%, #090610 60%, #10091a 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
 }
 
-header{
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:rgba(13,7,23,.88);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid #7548a6;
-  padding:13px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  box-shadow:0 5px 24px #0005
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(13,7,23,.9);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #7548a6;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  box-shadow: 0 5px 24px #0005;
 }
 
-.brand{
-  font-weight:950;
-  font-size:21px;
-  letter-spacing:-.6px
+.brand {
+  font-weight: 950;
+  font-size: 22px;
+  letter-spacing: -.6px;
 }
 
-.brand .coin{color:var(--gold)}
-.brand .coins{color:#c084fc}
-
-.badge{
-  font-size:10px;
-  letter-spacing:.8px;
-  text-transform:uppercase;
-  color:#ffe7a0;
-  border:1px solid #9b7432;
-  background:linear-gradient(120deg,#33220d,#241332);
-  border-radius:99px;
-  padding:6px 9px;
-  font-weight:850;
-  white-space:nowrap
+.brand .coin {
+  color: var(--gold);
 }
 
-main{
-  max-width:760px;
-  margin:0 auto;
-  padding:20px 14px 42px
+.brand .coins {
+  color: #c084fc;
 }
 
-.hero{
-  padding:28px 8px 24px;
-  position:relative
+.badge {
+  font-size: 10px;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: #ffe7a0;
+  border: 1px solid #9b7432;
+  background: linear-gradient(120deg,#33220d,#241332);
+  border-radius: 99px;
+  padding: 6px 9px;
+  font-weight: 850;
+  white-space: nowrap;
 }
 
-.eyebrow{
-  color:var(--gold);
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin:0 0 10px
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 14px 42px;
 }
 
-.hero h1{
-  font-size:clamp(32px,8.5vw,48px);
-  line-height:1.04;
-  letter-spacing:-1.5px;
-  margin:0 0 14px;
-  text-shadow:0 0 35px #a855f755
+.hero {
+  padding: 28px 8px 24px;
 }
 
-.hero h1 em{
-  font-style:normal;
-  background:linear-gradient(90deg,#d8b4fe,#a855f7,#ffd76a);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 10px;
 }
 
-.hero p{
-  margin:0;
-  color:var(--muted);
-  font-size:14px;
-  max-width:520px
+.hero h1 {
+  font-size: clamp(32px, 8.5vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  margin: 0 0 14px;
+  text-shadow: 0 0 35px #a855f755;
 }
 
-.trustline{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:17px
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg,#d8b4fe,#a855f7,#ffd76a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.trustline span{
-  font-size:11px;
-  color:#f0e5ff;
-  border:1px solid #553a75;
-  background:#1a1028;
-  padding:7px 10px;
-  border-radius:99px;
-  box-shadow:0 3px 12px #0003
+.hero p {
+  color: var(--muted);
+  font-size: 14px;
 }
 
-.card{
-  background:linear-gradient(145deg,rgba(34,22,53,.97),rgba(16,10,27,.98));
-  border:1px solid #533a70;
-  border-radius:21px;
-  padding:17px;
-  margin:15px 0;
-  box-shadow:0 18px 44px #0006,0 0 25px #9333ea0c
+.trustline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 17px;
 }
 
-.section-head{
-  display:flex;
-  align-items:flex-start;
-  gap:11px;
-  margin:0 0 15px
+.trustline span {
+  font-size: 11px;
+  color: #f0e5ff;
+  border: 1px solid #553a75;
+  background: #1a1028;
+  padding: 7px 10px;
+  border-radius: 99px;
 }
 
-.step{
-  display:grid;
-  place-items:center;
-  flex-shrink:0;
-  width:32px;
-  height:32px;
-  border-radius:11px;
-  background:linear-gradient(135deg,#c084fc,#7c3aed);
-  font-weight:950;
-  color:white;
-  box-shadow:0 4px 16px #9333ea66
+.card {
+  background: linear-gradient(145deg,rgba(34,22,53,.97),rgba(16,10,27,.98));
+  border: 1px solid #533a70;
+  border-radius: 21px;
+  padding: 18px;
+  margin: 15px 0;
+  box-shadow: 0 18px 44px #0006, 0 0 25px #9333ea0c;
 }
 
-.section-title{
-  font-size:17px;
-  font-weight:900;
-  margin:1px 0 2px;
-  letter-spacing:-.3px
+.section-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-bottom: 16px;
 }
 
-.section-subtitle{
-  font-size:12px;
-  color:var(--muted);
-  margin:0
+.step {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 11px;
+  background: linear-gradient(135deg,#c084fc,#7c3aed);
+  font-weight: 950;
+  color: white;
+  box-shadow: 0 4px 16px #9333ea66;
 }
 
-.packages{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:11px
+.section-title {
+  font-size: 17px;
+  font-weight: 900;
+  margin: 1px 0 2px;
 }
 
-.package{
-  position:relative;
-  min-width:0;
-  border:1px solid #50366b;
-  background:linear-gradient(150deg,#1b1129,#100b19);
-  border-radius:16px;
-  padding:16px 9px 14px;
-  cursor:pointer;
-  text-align:center;
-  color:var(--text);
-  font:inherit;
-  min-height:137px;
-  transition:transform .15s,border-color .15s,box-shadow .15s;
-  overflow-wrap:anywhere
+.section-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
 }
 
-.package:active{transform:scale(.98)}
-
-.package strong{
-  display:block;
-  font-size:18px;
-  line-height:1.25
+.packages {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 11px;
 }
 
-.package .coin-icon{
-  font-size:23px;
-  display:block;
-  margin-bottom:5px
+.package {
+  min-width: 0;
+  border: 1px solid #50366b;
+  background: linear-gradient(150deg,#1b1129,#100b19);
+  border-radius: 16px;
+  padding: 16px 9px 14px;
+  cursor: pointer;
+  text-align: center;
+  color: var(--text);
+  font: inherit;
+  min-height: 137px;
+  transition: .15s;
+  overflow-wrap: anywhere;
 }
 
-.package small{
-  display:block;
-  font-size:20px;
-  font-weight:950;
-  color:var(--gold);
-  margin-top:9px;
-  text-shadow:0 0 15px #ffd76a30
+.package:active {
+  transform: scale(.98);
 }
 
-.package .old{
-  font-size:12px;
-  color:#c0b2d2;
-  text-decoration:line-through;
-  margin-top:2px
+.package strong {
+  display: block;
+  font-size: 18px;
+  line-height: 1.3;
 }
 
-.off{
-  display:inline-block;
-  margin-top:7px;
-  padding:4px 7px;
-  border-radius:99px;
-  background:linear-gradient(90deg,#45206d,#302046);
-  border:1px solid #70469b;
-  color:#ead7ff;
-  font-size:10px;
-  font-weight:900
+.package .coin-icon {
+  font-size: 25px;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.package.selected{
-  border:1.5px solid #c084fc;
-  background:linear-gradient(145deg,#422267,#1b102b);
-  box-shadow:0 0 0 1px #c084fc33,0 0 25px #a855f744
+.package small {
+  display: block;
+  font-size: 20px;
+  font-weight: 950;
+  color: var(--gold);
+  margin-top: 9px;
+  text-shadow: 0 0 15px #ffd76a30;
 }
 
-.package.selected:after{
-  content:'✓ SELECTED';
-  display:block;
-  color:#f1dcff;
-  font-size:9px;
-  font-weight:950;
-  letter-spacing:1px;
-  margin-top:7px
+.package .old {
+  font-size: 12px;
+  color: #c0b2d2;
+  text-decoration: line-through;
+  margin-top: 2px;
 }
 
-.package.custom{
-  display:flex;
-  flex-direction:column;
-  justify-content:center
+.off {
+  display: inline-block;
+  margin-top: 7px;
+  padding: 4px 7px;
+  border-radius: 99px;
+  background: linear-gradient(90deg,#45206d,#302046);
+  border: 1px solid #70469b;
+  color: #ead7ff;
+  font-size: 10px;
+  font-weight: 900;
 }
 
-.package.custom strong{
-  font-size:17px;
-  color:#e5c8ff
+.package.selected {
+  border: 1.5px solid #c084fc;
+  background: linear-gradient(145deg,#422267,#1b102b);
+  box-shadow: 0 0 0 1px #c084fc33, 0 0 25px #a855f744;
 }
 
-.package.custom small{
-  font-size:13px;
-  color:#e0d1ef;
-  font-weight:650
+.package.selected:after {
+  content: "✓ SELECTED";
+  display: block;
+  color: #f1dcff;
+  font-size: 9px;
+  font-weight: 950;
+  letter-spacing: 1px;
+  margin-top: 7px;
 }
 
-.label{
-  display:block;
-  font-weight:800;
-  font-size:13px;
-  margin:14px 0 7px
+.package.custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-input{
-  width:100%;
-  min-width:0;
-  border:1px solid #61447e;
-  border-radius:12px;
-  padding:14px;
-  font:inherit;
-  font-size:16px;
-  background:#0e0917;
-  color:var(--text)
+.package.custom strong {
+  font-size: 17px;
+  color: #e5c8ff;
 }
 
-input::placeholder{color:#a89ab9}
-
-input:focus{
-  outline:3px solid #a855f744;
-  border-color:#c084fc
+.package.custom small {
+  font-size: 13px;
+  color: #e0d1ef;
+  font-weight: 650;
 }
 
-.hint{
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.55;
-  margin:8px 0 0
+.label {
+  display: block;
+  font-weight: 800;
+  font-size: 13px;
+  margin: 14px 0 7px;
 }
 
-.custom-box{
-  display:none;
-  margin-top:13px;
-  padding:14px;
-  background:#120b1d;
-  border:1px solid #493264;
-  border-radius:14px
+input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #61447e;
+  border-radius: 12px;
+  padding: 14px;
+  font: inherit;
+  font-size: 16px;
+  background: #0e0917;
+  color: var(--text);
 }
 
-.custom-box.show{display:block}
-
-.account-row{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  background:#120b1d;
-  border:1px solid #493264;
-  padding:12px;
-  border-radius:14px;
-  margin-top:12px;
-  min-width:0
+input::placeholder {
+  color: #a89ab9;
 }
 
-.avatar{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#c084fc,#7c3aed,#ec4899);
-  border:2px solid #e9d5ff;
-  color:#fff;
-  display:grid;
-  place-items:center;
-  font-size:20px;
-  font-weight:950;
-  flex-shrink:0;
-  box-shadow:0 0 20px #a855f744
+input:focus {
+  outline: 3px solid #a855f744;
+  border-color: #c084fc;
 }
 
-.account-row>div:last-child{min-width:0}
-
-.account-row strong{
-  display:block;
-  overflow-wrap:anywhere
+.hint {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 8px 0 0;
 }
 
-.account-row small{
-  color:var(--muted);
-  display:block;
-  margin-top:3px;
-  font-size:11px;
-  line-height:1.4
+.custom-box {
+  display: none;
+  margin-top: 13px;
+  padding: 14px;
+  background: #120b1d;
+  border: 1px solid #493264;
+  border-radius: 14px;
 }
 
-.price-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:14px;
-  padding:13px 0;
-  border-bottom:1px solid #493264;
-  font-size:13px
+.custom-box.show {
+  display: block;
 }
 
-.price-row span{color:var(--muted)}
-
-.price-row strong{
-  text-align:right;
-  overflow-wrap:anywhere
+.account-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #120b1d;
+  border: 1px solid #493264;
+  padding: 12px;
+  border-radius: 14px;
+  margin-top: 12px;
+  min-width: 0;
 }
 
-.price-row:last-of-type{border-bottom:0}
-
-.price-row.total{
-  font-weight:950;
-  font-size:20px;
-  color:var(--text)
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#c084fc,#7c3aed,#ec4899);
+  border: 2px solid #e9d5ff;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 950;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px #a855f744;
 }
 
-.price-row.total strong{
-  color:var(--gold);
-  text-shadow:0 0 18px #ffd76a35
+.account-row strong {
+  display: block;
+  overflow-wrap: anywhere;
 }
 
-button.primary{
-  width:100%;
-  background:linear-gradient(100deg,#7c3aed,#a855f7,#c084fc);
-  border:1px solid #d8b4fe;
-  color:#fff;
-  font:inherit;
-  font-weight:900;
-  font-size:15px;
-  padding:16px;
-  border-radius:13px;
-  margin-top:15px;
-  cursor:pointer;
-  box-shadow:0 8px 25px #7c3aed55
+.account-row small {
+  color: var(--muted);
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
 }
 
-button.primary:active{filter:brightness(1.12)}
-
-button.primary:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-  box-shadow:none
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid #493264;
+  font-size: 13px;
 }
 
-.notice{
-  background:linear-gradient(120deg,#30200d,#201329);
-  border:1px solid #7a5a2c;
-  border-radius:12px;
-  padding:12px;
-  color:#ffe7b0;
-  font-size:11px;
-  line-height:1.6;
-  margin-top:14px
+.price-row span {
+  color: var(--muted);
 }
 
-.result{
-  display:none;
-  background:#14271d;
-  border:1px solid #35734d;
-  padding:14px;
-  border-radius:12px;
-  margin-top:12px;
-  line-height:1.65;
-  font-size:13px;
-  overflow-wrap:anywhere
+.price-row strong {
+  text-align: right;
+  overflow-wrap: anywhere;
 }
 
-.result.show{display:block}
-
-footer{
-  text-align:center;
-  color:#c1b1d3;
-  font-size:11px;
-  padding:18px 12px 30px
+.price-row.total {
+  font-weight: 950;
+  font-size: 20px;
+  color: var(--text);
+  border-bottom: 0;
 }
 
-footer span{color:var(--gold)}
-
-@media(min-width:560px){
-  main{padding-top:28px}
-  .card{padding:23px}
-  .packages{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .package{padding:18px 12px}
+.price-row.total strong {
+  color: var(--gold);
+  text-shadow: 0 0 18px #ffd76a35;
 }
 
-@media(max-width:350px){
-  header{padding:11px}
-  .brand{font-size:17px}
-  .badge{font-size:9px}
-  .card{padding:13px}
-  .package strong{font-size:16px}
-  .package small{font-size:18px}
+button.primary {
+  width: 100%;
+  background: linear-gradient(100deg,#7c3aed,#a855f7,#c084fc);
+  border: 1px solid #d8b4fe;
+  color: #fff;
+  font: inherit;
+  font-weight: 900;
+  font-size: 15px;
+  padding: 16px;
+  border-radius: 13px;
+  margin-top: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px #7c3aed55;
+}
+
+button.primary:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.notice {
+  background: linear-gradient(120deg,#30200d,#201329);
+  border: 1px solid #7a5a2c;
+  border-radius: 12px;
+  padding: 12px;
+  color: #ffe7b0;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+
+.result {
+  display: none;
+  background: #14271d;
+  border: 1px solid #35734d;
+  padding: 14px;
+  border-radius: 12px;
+  margin-top: 12px;
+  line-height: 1.65;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.result.show {
+  display: block;
+}
+
+footer {
+  text-align: center;
+  color: #c1b1d3;
+  font-size: 11px;
+  padding: 18px 12px 30px;
+}
+
+footer span {
+  color: var(--gold);
+}
+
+@media (min-width:560px) {
+  main {
+    padding-top: 28px;
+  }
+
+  .card {
+    padding: 23px;
+  }
+
+  .packages {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+
+  .package {
+    padding: 18px 12px;
+  }
+}
+
+@media (max-width:350px) {
+  header {
+    padding: 11px;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .badge {
+    font-size: 9px;
+  }
+
+  .card {
+    padding: 13px;
+  }
+
+  .package strong {
+    font-size: 16px;
+  }
+
+  .package small {
+    font-size: 18px;
+  }
 }
 </style>
 </head>
@@ -467,7 +502,9 @@ footer span{color:var(--gold)}
 <body>
 
 <header>
-  <div class="brand"><span class="coin">◉</span> Kelvin <span class="coins">Coins</span></div>
+  <div class="brand">
+    <span class="coin">◉</span> Kelvin <span class="coins">Coins</span>
+  </div>
   <div class="badge">Premium preview</div>
 </header>
 
@@ -476,7 +513,8 @@ footer span{color:var(--gold)}
 <section class="hero">
   <p class="eyebrow">A smoother coin top-up experience</p>
   <h1>Recharge your <em>TikTok Coins.</em></h1>
-  <p>Choose your package, confirm the TikTok username, and review the estimated total before proceeding.</p>
+  <p>Choose your package, confirm the TikTok username, and review the estimated total.</p>
+
   <div class="trustline">
     <span>✦ Clear pricing</span>
     <span>40% discount shown</span>
@@ -495,7 +533,8 @@ footer span{color:var(--gold)}
 
   <div class="packages" id="packages">
 
-    <button class="package selected" data-coins="30" data-price="276" type="button">
+    <button class="package selected"
+      data-coins="30" data-price="276" type="button">
       <span class="coin-icon">🪙</span>
       <strong>30 Coins</strong>
       <small>₦276</small>
@@ -503,7 +542,8 @@ footer span{color:var(--gold)}
       <span class="off">40% OFF</span>
     </button>
 
-    <button class="package" data-coins="50" data-price="456" type="button">
+    <button class="package"
+      data-coins="50" data-price="456" type="button">
       <span class="coin-icon">🪙</span>
       <strong>50 Coins</strong>
       <small>₦456</small>
@@ -511,7 +551,8 @@ footer span{color:var(--gold)}
       <span class="off">40% OFF</span>
     </button>
 
-    <button class="package" data-coins="100" data-price="900" type="button">
+    <button class="package"
+      data-coins="100" data-price="900" type="button">
       <span class="coin-icon">🪙</span>
       <strong>100 Coins</strong>
       <small>₦900</small>
@@ -519,7 +560,8 @@ footer span{color:var(--gold)}
       <span class="off">40% OFF</span>
     </button>
 
-    <button class="package" data-coins="200" data-price="1860" type="button">
+    <button class="package"
+      data-coins="200" data-price="1860" type="button">
       <span class="coin-icon">🪙</span>
       <strong>200 Coins</strong>
       <small>₦1,860</small>
@@ -527,7 +569,8 @@ footer span{color:var(--gold)}
       <span class="off">40% OFF</span>
     </button>
 
-    <button class="package custom" data-coins="custom" data-price="0" type="button">
+    <button class="package custom"
+      data-coins="custom" data-price="0" type="button">
       <span class="coin-icon">✦</span>
       <strong>Custom amount</strong>
       <small>Choose your own coins</small>
@@ -536,7 +579,10 @@ footer span{color:var(--gold)}
   </div>
 
   <div class="custom-box" id="customBox">
-    <label class="label" for="customCoins">Number of coins (30–2,500,000)</label>
+    <label class="label" for="customCoins">
+      Number of coins (30–2,500,000)
+    </label>
+
     <input
       id="customCoins"
       type="number"
@@ -544,11 +590,11 @@ footer span{color:var(--gold)}
       min="30"
       max="2500000"
       step="1"
-      placeholder="Enter coin amount"
-    >
+      placeholder="Enter coin amount">
+
     <p class="hint">
-      Custom total is an estimate based on ₦15.50 per coin with a 40% discount.
-      Actual supplier pricing may vary.
+      Custom total is an estimate based on ₦15.50 per coin with a
+      40% discount. Actual supplier pricing may vary.
     </p>
   </div>
 </section>
@@ -558,21 +604,22 @@ footer span{color:var(--gold)}
     <div class="step">2</div>
     <div>
       <h2 class="section-title">Confirm your TikTok account</h2>
-      <p class="section-subtitle">Check the username carefully before continuing.</p>
+      <p class="section-subtitle">Check the username carefully.</p>
     </div>
   </div>
 
   <label class="label" for="username">TikTok username</label>
+
   <input
     id="username"
     type="text"
     maxlength="24"
     autocomplete="off"
-    placeholder="e.g. @yourusername"
-  >
+    placeholder="e.g. @yourusername">
 
   <p class="hint">
-    This preview does not verify the account or fetch a real TikTok profile photo.
+    This is a username preview only. It does not verify the account
+    or fetch a real TikTok profile photo.
   </p>
 
   <div class="account-row">
@@ -589,7 +636,7 @@ footer span{color:var(--gold)}
     <div class="step">3</div>
     <div>
       <h2 class="section-title">Review your order</h2>
-      <p class="section-subtitle">Check the details before you continue.</p>
+      <p class="section-subtitle">Check the details before continuing.</p>
     </div>
   </div>
 
@@ -613,14 +660,17 @@ footer span{color:var(--gold)}
     <strong id="summaryPrice">₦276</strong>
   </div>
 
-  <button class="primary" id="reviewBtn" type="button">Review order</button>
+  <button class="primary" id="reviewBtn" type="button" disabled>
+    Review order
+  </button>
 
   <div class="result" id="result"></div>
 
   <div class="notice">
-    <strong>Prototype only:</strong> this page does not accept payments, submit or store orders, or deliver Coins.
-    Never enter your TikTok password or card details here.
-    Verify that your supply and resale method are permitted before selling.
+    <strong>Preview only:</strong> This page does not accept payments,
+    submit or store orders, or deliver Coins. Never enter your TikTok
+    password or card details here. Verify that your coin supply and
+    resale method are permitted before selling.
   </div>
 </section>
 
@@ -631,10 +681,13 @@ footer span{color:var(--gold)}
 </footer>
 
 <script>
-const packageButtons = [...document.querySelectorAll('.package')];
-const customBox = document.getElementById('customBox');
-const customCoinsInput = document.getElementById('customCoins');
-const usernameInput = document.getElementById('username');
+const packageButtons = [
+  ...document.querySelectorAll(".package")
+];
+
+const customBox = document.getElementById("customBox");
+const customCoinsInput = document.getElementById("customCoins");
+const usernameInput = document.getElementById("username");
 
 let selected = {
   coins: 30,
@@ -643,10 +696,12 @@ let selected = {
 };
 
 const money = n =>
-  '\u20A6' + Math.round(n).toLocaleString('en-NG');
+  "\u20A6" + Math.round(n).toLocaleString("en-NG");
 
 function currentCoins() {
-  if (!selected.custom) return selected.coins;
+  if (!selected.custom) {
+    return selected.coins;
+  }
 
   const n = Number(customCoinsInput.value);
 
@@ -656,118 +711,149 @@ function currentCoins() {
 }
 
 function currentPrice() {
-  if (!selected.custom) return selected.price;
+  if (!selected.custom) {
+    return selected.price;
+  }
 
-  const n = currentCoins();
+  const coins = currentCoins();
 
-  return n === null ? null : n * 15.5 * 0.6;
+  return coins === null ? null : coins * 15.5 * 0.6;
 }
 
 function normalizedUsername() {
-  let u = usernameInput.value.trim().replace(/\s/g, '');
+  let username = usernameInput.value
+    .trim()
+    .replace(/\s/g, "");
 
-  if (u && !u.startsWith('@')) {
-    u = '@' + u;
+  if (username && !username.startsWith("@")) {
+    username = "@" + username;
   }
 
-  return u;
+  return username;
 }
 
 function update() {
   const coins = currentCoins();
   const price = currentPrice();
-  const username = normalizedUsername() || '@yourusername';
 
-  document.getElementById('summaryUser').textContent = username;
-  document.getElementById('previewUsername').textContent = username;
+  const username =
+    normalizedUsername() || "@yourusername";
 
-  document.getElementById('avatar').textContent =
+  document.getElementById("summaryUser").textContent =
+    username;
+
+  document.getElementById("previewUsername").textContent =
+    username;
+
+  document.getElementById("avatar").textContent =
     username.length > 1
-      ? username.replace('@', '').charAt(0).toUpperCase()
-      : '?';
+      ? username.replace("@", "").charAt(0).toUpperCase()
+      : "?";
 
-  document.getElementById('accountStatus').textContent =
+  document.getElementById("accountStatus").textContent =
     usernameInput.value.trim()
-      ? 'Username preview only — account not verified'
-      : 'Your username preview will appear here.';
+      ? "Username preview only — account not verified"
+      : "Your username preview will appear here.";
 
-  document.getElementById('summaryCoins').textContent =
+  document.getElementById("summaryCoins").textContent =
     coins === null
-      ? 'Enter a valid amount'
-      : coins.toLocaleString('en-NG') + ' Coins';
+      ? "Enter a valid amount"
+      : coins.toLocaleString("en-NG") + " Coins";
 
-  document.getElementById('summaryPrice').textContent =
-    price === null ? '—' : money(price);
+  document.getElementById("summaryPrice").textContent =
+    price === null ? "—" : money(price);
 
-  document.getElementById('reviewBtn').disabled =
-    !usernameInput.value.trim() || coins === null;
+  document.getElementById("reviewBtn").disabled =
+    !usernameInput.value.trim() ||
+    coins === null ||
+    price === null;
 }
 
-packageButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    packageButtons.forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
+packageButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    packageButtons.forEach(item =>
+      item.classList.remove("selected")
+    );
 
-    selected.custom = btn.dataset.coins === 'custom';
+    button.classList.add("selected");
 
-    customBox.classList.toggle('show', selected.custom);
+    selected.custom =
+      button.dataset.coins === "custom";
+
+    customBox.classList.toggle(
+      "show",
+      selected.custom
+    );
 
     if (!selected.custom) {
       selected = {
-        coins: Number(btn.dataset.coins),
-        price: Number(btn.dataset.price),
+        coins: Number(button.dataset.coins),
+        price: Number(button.dataset.price),
         custom: false
       };
     }
 
-    document.getElementById('result').classList.remove('show');
+    document.getElementById("result")
+      .classList.remove("show");
+
     update();
   });
 });
 
-customCoinsInput.addEventListener('input', () => {
-  document.getElementById('result').classList.remove('show');
+customCoinsInput.addEventListener("input", () => {
+  document.getElementById("result")
+    .classList.remove("show");
+
   update();
 });
 
-usernameInput.addEventListener('input', () => {
-  document.getElementById('result').classList.remove('show');
+usernameInput.addEventListener("input", () => {
+  document.getElementById("result")
+    .classList.remove("show");
+
   update();
 });
 
-document.getElementById('reviewBtn').addEventListener('click', () => {
-  const coins = currentCoins();
-  const price = currentPrice();
-  const username = normalizedUsername();
+document.getElementById("reviewBtn")
+  .addEventListener("click", () => {
+    const coins = currentCoins();
+    const price = currentPrice();
+    const username = normalizedUsername();
 
-  if (!username || coins === null || price === null) return;
+    if (!username || coins === null || price === null) {
+      return;
+    }
 
-  const result = document.getElementById('result');
+    const result = document.getElementById("result");
 
-  result.replaceChildren();
+    result.replaceChildren();
 
-  const title = document.createElement('strong');
-  title.textContent = 'Order preview';
+    const title = document.createElement("strong");
+    title.textContent = "Order preview";
 
-  result.append(
-    title,
-    document.createElement('br'),
-    document.createTextNode('Account: ' + username),
-    document.createElement('br'),
-    document.createTextNode(
-      'Package: ' + coins.toLocaleString('en-NG') + ' Coins'
-    ),
-    document.createElement('br'),
-    document.createTextNode('Estimated total: ' + money(price)),
-    document.createElement('br'),
-    document.createElement('br'),
-    document.createTextNode(
-      'Check the username carefully. No order or payment has been submitted.'
-    )
-  );
+    result.append(
+      title,
+      document.createElement("br"),
+      document.createTextNode("Account: " + username),
+      document.createElement("br"),
+      document.createTextNode(
+        "Package: " +
+        coins.toLocaleString("en-NG") +
+        " Coins"
+      ),
+      document.createElement("br"),
+      document.createTextNode(
+        "Estimated total: " + money(price)
+      ),
+      document.createElement("br"),
+      document.createElement("br"),
+      document.createTextNode(
+        "Check the username carefully. No order or payment has been submitted."
+      )
+    );
 
-  result.classList.add('show');
-});
+    result.classList.add("show");
+  });
 
 update();
 </script>
