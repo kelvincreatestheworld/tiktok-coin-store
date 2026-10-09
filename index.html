@@ -1,373 +1,465 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#09070f">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10051f">
 <title>Kelvin Coins | Premium Coin Store</title>
-<meta name="description" content="Kelvin Coins Premium Store">
+<meta name="description" content="Kelvin Coins storefront preview.">
 
 <style>
-:root {
-    --bg: #09070f;
-    --card: #151020;
-    --gold: #ffd166;
-    --purple: #9b5cff;
-    --green: #00e6a0;
-    --text: #ffffff;
-    --muted: #b8b0c9;
+:root{
+  --bg:#0b0614;
+  --panel:#171027;
+  --panel2:#211538;
+  --purple:#a855f7;
+  --purple2:#7c3aed;
+  --gold:#ffd76a;
+  --text:#fffaff;
+  --muted:#d0c4e2;
+  --line:#493264;
+  --good:#9af0bd
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{box-sizing:border-box}
+html{color-scheme:dark}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(ellipse at 50% -8%,#6d28d9 0,rgba(109,40,217,.36) 20rem,transparent 39rem),
+    radial-gradient(ellipse at 100% 20%,rgba(236,72,153,.18),transparent 25rem),
+    linear-gradient(160deg,#130820 0%,#090610 60%,#10091a 100%);
+  background-attachment:fixed;
+  color:var(--text);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.5;
+  min-height:100vh
 }
 
-body {
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    color: var(--text);
-    background:
-        radial-gradient(ellipse at 15% 15%, rgba(155,92,255,.28), transparent 40%),
-        radial-gradient(ellipse at 85% 30%, rgba(255,209,102,.18), transparent 35%),
-        radial-gradient(ellipse at 50% 100%, rgba(0,230,160,.12), transparent 45%),
-        var(--bg);
-    overflow-x: hidden;
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(13,7,23,.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid #7548a6;
+  padding:13px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  box-shadow:0 5px 24px #0005
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,.025),
-        transparent 40%,
-        rgba(155,92,255,.04)
-    );
-    z-index: -1;
+.brand{
+  font-weight:950;
+  font-size:21px;
+  letter-spacing:-.6px
 }
 
-.container {
-    width: min(1100px, 92%);
-    margin: auto;
+.brand .coin{color:var(--gold)}
+.brand .coins{color:#c084fc}
+
+.badge{
+  font-size:10px;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  color:#ffe7a0;
+  border:1px solid #9b7432;
+  background:linear-gradient(120deg,#33220d,#241332);
+  border-radius:99px;
+  padding:6px 9px;
+  font-weight:850;
+  white-space:nowrap
 }
 
-header {
-    padding: 24px 0;
-    border-bottom: 1px solid rgba(255,255,255,.1);
-    background: rgba(9,7,15,.7);
-    backdrop-filter: blur(15px);
+main{
+  max-width:760px;
+  margin:0 auto;
+  padding:20px 14px 42px
 }
 
-.nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
+.hero{
+  padding:28px 8px 24px;
+  position:relative
 }
 
-.logo {
-    font-size: 23px;
-    font-weight: 900;
-    letter-spacing: -1px;
+.eyebrow{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin:0 0 10px
 }
 
-.logo span {
-    color: var(--gold);
+.hero h1{
+  font-size:clamp(32px,8.5vw,48px);
+  line-height:1.04;
+  letter-spacing:-1.5px;
+  margin:0 0 14px;
+  text-shadow:0 0 35px #a855f755
 }
 
-.badge {
-    border: 1px solid rgba(255,209,102,.4);
-    color: var(--gold);
-    padding: 8px 13px;
-    border-radius: 30px;
-    font-size: 11px;
-    font-weight: bold;
-    background: rgba(255,209,102,.07);
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(90deg,#d8b4fe,#a855f7,#ffd76a);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent
 }
 
-.hero {
-    text-align: center;
-    padding: 75px 0 45px;
+.hero p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  max-width:520px
 }
 
-.hero-label {
-    display: inline-block;
-    padding: 9px 15px;
-    border: 1px solid rgba(155,92,255,.5);
-    border-radius: 30px;
-    background: rgba(155,92,255,.12);
-    color: #d5b8ff;
-    font-size: 12px;
-    margin-bottom: 23px;
+.trustline{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:17px
 }
 
-.hero h1 {
-    font-size: clamp(38px, 7vw, 72px);
-    line-height: 1.05;
-    font-weight: 900;
-    letter-spacing: -2.5px;
+.trustline span{
+  font-size:11px;
+  color:#f0e5ff;
+  border:1px solid #553a75;
+  background:#1a1028;
+  padding:7px 10px;
+  border-radius:99px;
+  box-shadow:0 3px 12px #0003
 }
 
-.hero h1 span {
-    background: linear-gradient(90deg, #ffd166, #fff0b5, #b98aff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+.card{
+  background:linear-gradient(145deg,rgba(34,22,53,.97),rgba(16,10,27,.98));
+  border:1px solid #533a70;
+  border-radius:21px;
+  padding:17px;
+  margin:15px 0;
+  box-shadow:0 18px 44px #0006,0 0 25px #9333ea0c
 }
 
-.hero p {
-    color: var(--muted);
-    max-width: 530px;
-    margin: 22px auto 0;
-    line-height: 1.8;
-    font-size: 15px;
+.section-head{
+  display:flex;
+  align-items:flex-start;
+  gap:11px;
+  margin:0 0 15px
 }
 
-.stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 25px 0 50px;
+.step{
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  width:32px;
+  height:32px;
+  border-radius:11px;
+  background:linear-gradient(135deg,#c084fc,#7c3aed);
+  font-weight:950;
+  color:white;
+  box-shadow:0 4px 16px #9333ea66
 }
 
-.stat {
-    padding: 20px 10px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,.09);
-    border-radius: 17px;
-    background: rgba(255,255,255,.035);
+.section-title{
+  font-size:17px;
+  font-weight:900;
+  margin:1px 0 2px;
+  letter-spacing:-.3px
 }
 
-.stat strong {
-    display: block;
-    font-size: 19px;
-    color: var(--gold);
-    margin-bottom: 7px;
+.section-subtitle{
+  font-size:12px;
+  color:var(--muted);
+  margin:0
 }
 
-.stat small {
-    color: var(--muted);
-    font-size: 11px;
+.packages{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px
 }
 
-.section-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 24px;
+.package{
+  position:relative;
+  min-width:0;
+  border:1px solid #50366b;
+  background:linear-gradient(150deg,#1b1129,#100b19);
+  border-radius:16px;
+  padding:16px 9px 14px;
+  cursor:pointer;
+  text-align:center;
+  color:var(--text);
+  font:inherit;
+  min-height:137px;
+  transition:transform .15s,border-color .15s,box-shadow .15s;
+  overflow-wrap:anywhere
 }
 
-.section-heading h2 {
-    font-size: 25px;
+.package:active{transform:scale(.98)}
+
+.package strong{
+  display:block;
+  font-size:18px;
+  line-height:1.25
 }
 
-.section-heading p {
-    color: var(--muted);
-    font-size: 12px;
-    margin-top: 7px;
+.package .coin-icon{
+  font-size:23px;
+  display:block;
+  margin-bottom:5px
 }
 
-.currency {
-    color: var(--green);
-    font-size: 12px;
-    font-weight: bold;
-    padding: 9px 12px;
-    border-radius: 30px;
-    border: 1px solid rgba(0,230,160,.3);
-    background: rgba(0,230,160,.07);
+.package small{
+  display:block;
+  font-size:20px;
+  font-weight:950;
+  color:var(--gold);
+  margin-top:9px;
+  text-shadow:0 0 15px #ffd76a30
 }
 
-.products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    padding-bottom: 60px;
+.package .old{
+  font-size:12px;
+  color:#c0b2d2;
+  text-decoration:line-through;
+  margin-top:2px
 }
 
-.product {
-    position: relative;
-    padding: 25px;
-    overflow: hidden;
-    border-radius: 22px;
-    border: 1px solid rgba(255,255,255,.1);
-    background: linear-gradient(
-        145deg,
-        rgba(35,25,52,.95),
-        rgba(15,11,24,.96)
-    );
-    box-shadow: 0 12px 40px rgba(0,0,0,.2);
-    transition: transform .25s, border-color .25s, box-shadow .25s;
+.off{
+  display:inline-block;
+  margin-top:7px;
+  padding:4px 7px;
+  border-radius:99px;
+  background:linear-gradient(90deg,#45206d,#302046);
+  border:1px solid #70469b;
+  color:#ead7ff;
+  font-size:10px;
+  font-weight:900
 }
 
-.product:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255,209,102,.55);
-    box-shadow: 0 15px 40px rgba(155,92,255,.12);
+.package.selected{
+  border:1.5px solid #c084fc;
+  background:linear-gradient(145deg,#422267,#1b102b);
+  box-shadow:0 0 0 1px #c084fc33,0 0 25px #a855f744
 }
 
-.product.featured {
-    border-color: rgba(255,209,102,.5);
-    box-shadow: 0 0 30px rgba(255,209,102,.07);
+.package.selected:after{
+  content:'✓ SELECTED';
+  display:block;
+  color:#f1dcff;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:1px;
+  margin-top:7px
 }
 
-.popular {
-    position: absolute;
-    top: 16px;
-    right: 15px;
-    background: var(--gold);
-    color: #171019;
-    padding: 6px 9px;
-    border-radius: 20px;
-    font-size: 9px;
-    font-weight: 900;
+.package.custom{
+  display:flex;
+  flex-direction:column;
+  justify-content:center
 }
 
-.coin-icon {
-    width: 64px;
-    height: 64px;
-    display: grid;
-    place-items: center;
-    border-radius: 18px;
-    font-size: 32px;
-    margin-bottom: 22px;
-    background: linear-gradient(
-        135deg,
-        rgba(255,209,102,.2),
-        rgba(155,92,255,.2)
-    );
-    border: 1px solid rgba(255,209,102,.2);
-    box-shadow: 0 0 25px rgba(255,209,102,.07);
+.package.custom strong{
+  font-size:17px;
+  color:#e5c8ff
 }
 
-.product h3 {
-    font-size: 19px;
-    margin-bottom: 9px;
+.package.custom small{
+  font-size:13px;
+  color:#e0d1ef;
+  font-weight:650
 }
 
-.product .description {
-    color: var(--muted);
-    font-size: 12px;
-    line-height: 1.6;
-    min-height: 38px;
+.label{
+  display:block;
+  font-weight:800;
+  font-size:13px;
+  margin:14px 0 7px
 }
 
-.price {
-    margin: 22px 0 8px;
-    font-size: 30px;
-    font-weight: 900;
-    color: var(--gold);
-    letter-spacing: -1px;
+input{
+  width:100%;
+  min-width:0;
+  border:1px solid #61447e;
+  border-radius:12px;
+  padding:14px;
+  font:inherit;
+  font-size:16px;
+  background:#0e0917;
+  color:var(--text)
 }
 
-.price small {
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0;
+input::placeholder{color:#a89ab9}
+
+input:focus{
+  outline:3px solid #a855f744;
+  border-color:#c084fc
 }
 
-.amount {
-    font-size: 12px;
-    color: #d9d0e8;
-    margin-bottom: 22px;
+.hint{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.55;
+  margin:8px 0 0
 }
 
-.buy-btn {
-    display: block;
-    width: 100%;
-    border: none;
-    border-radius: 12px;
-    padding: 14px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 800;
-    color: #171019;
-    background: linear-gradient(90deg, #ffd166, #ffe7a3);
-    cursor: pointer;
-    transition: opacity .2s, transform .2s;
+.custom-box{
+  display:none;
+  margin-top:13px;
+  padding:14px;
+  background:#120b1d;
+  border:1px solid #493264;
+  border-radius:14px
 }
 
-.buy-btn:hover {
-    opacity: .9;
-    transform: scale(1.02);
+.custom-box.show{display:block}
+
+.account-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:#120b1d;
+  border:1px solid #493264;
+  padding:12px;
+  border-radius:14px;
+  margin-top:12px;
+  min-width:0
 }
 
-.buy-btn.secondary {
-    color: white;
-    background: linear-gradient(90deg, #7040c7, #a16cff);
+.avatar{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#c084fc,#7c3aed,#ec4899);
+  border:2px solid #e9d5ff;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:20px;
+  font-weight:950;
+  flex-shrink:0;
+  box-shadow:0 0 20px #a855f744
 }
 
-.note {
-    padding: 20px;
-    margin-bottom: 60px;
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 15px;
-    color: var(--muted);
-    background: rgba(255,255,255,.025);
-    font-size: 12px;
-    line-height: 1.8;
+.account-row>div:last-child{min-width:0}
+
+.account-row strong{
+  display:block;
+  overflow-wrap:anywhere
 }
 
-.note strong {
-    color: var(--gold);
+.account-row small{
+  color:var(--muted);
+  display:block;
+  margin-top:3px;
+  font-size:11px;
+  line-height:1.4
 }
 
-footer {
-    border-top: 1px solid rgba(255,255,255,.08);
-    padding: 27px 0;
-    text-align: center;
-    color: #847b96;
-    font-size: 11px;
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:14px;
+  padding:13px 0;
+  border-bottom:1px solid #493264;
+  font-size:13px
 }
 
-footer span {
-    color: var(--gold);
+.price-row span{color:var(--muted)}
+
+.price-row strong{
+  text-align:right;
+  overflow-wrap:anywhere
 }
 
-@media (max-width: 760px) {
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.price-row:last-of-type{border-bottom:0}
 
-    .hero {
-        padding-top: 55px;
-    }
-
-    .product {
-        padding: 18px;
-    }
-
-    .price {
-        font-size: 25px;
-    }
+.price-row.total{
+  font-weight:950;
+  font-size:20px;
+  color:var(--text)
 }
 
-@media (max-width: 480px) {
-    .products {
-        grid-template-columns: 1fr;
-    }
+.price-row.total strong{
+  color:var(--gold);
+  text-shadow:0 0 18px #ffd76a35
+}
 
-    .stats {
-        gap: 8px;
-    }
+button.primary{
+  width:100%;
+  background:linear-gradient(100deg,#7c3aed,#a855f7,#c084fc);
+  border:1px solid #d8b4fe;
+  color:#fff;
+  font:inherit;
+  font-weight:900;
+  font-size:15px;
+  padding:16px;
+  border-radius:13px;
+  margin-top:15px;
+  cursor:pointer;
+  box-shadow:0 8px 25px #7c3aed55
+}
 
-    .stat strong {
-        font-size: 16px;
-    }
+button.primary:active{filter:brightness(1.12)}
 
-    .hero h1 {
-        letter-spacing: -1.5px;
-    }
+button.primary:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+  box-shadow:none
+}
 
-    .section-heading h2 {
-        font-size: 21px;
-    }
+.notice{
+  background:linear-gradient(120deg,#30200d,#201329);
+  border:1px solid #7a5a2c;
+  border-radius:12px;
+  padding:12px;
+  color:#ffe7b0;
+  font-size:11px;
+  line-height:1.6;
+  margin-top:14px
+}
+
+.result{
+  display:none;
+  background:#14271d;
+  border:1px solid #35734d;
+  padding:14px;
+  border-radius:12px;
+  margin-top:12px;
+  line-height:1.65;
+  font-size:13px;
+  overflow-wrap:anywhere
+}
+
+.result.show{display:block}
+
+footer{
+  text-align:center;
+  color:#c1b1d3;
+  font-size:11px;
+  padding:18px 12px 30px
+}
+
+footer span{color:var(--gold)}
+
+@media(min-width:560px){
+  main{padding-top:28px}
+  .card{padding:23px}
+  .packages{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .package{padding:18px 12px}
+}
+
+@media(max-width:350px){
+  header{padding:11px}
+  .brand{font-size:17px}
+  .badge{font-size:9px}
+  .card{padding:13px}
+  .package strong{font-size:16px}
+  .package small{font-size:18px}
 }
 </style>
 </head>
@@ -375,140 +467,309 @@ footer span {
 <body>
 
 <header>
-    <div class="container nav">
-        <div class="logo">KELVIN <span>COINS.</span></div>
-        <div class="badge">✦ PREMIUM STORE</div>
-    </div>
+  <div class="brand"><span class="coin">◉</span> Kelvin <span class="coins">Coins</span></div>
+  <div class="badge">Premium preview</div>
 </header>
 
-<main class="container">
+<main>
 
-    <section class="hero">
-        <div class="hero-label">✦ THE PREMIUM COIN EXPERIENCE</div>
+<section class="hero">
+  <p class="eyebrow">A smoother coin top-up experience</p>
+  <h1>Recharge your <em>TikTok Coins.</em></h1>
+  <p>Choose your package, confirm the TikTok username, and review the estimated total before proceeding.</p>
+  <div class="trustline">
+    <span>✦ Clear pricing</span>
+    <span>40% discount shown</span>
+    <span>Built for mobile</span>
+  </div>
+</section>
 
-        <h1>
-            Coins that hit<br>
-            <span>different.</span>
-        </h1>
-
-        <p>
-            Welcome to Kelvin Coins. Explore our premium coin packages,
-            check prices in Nigerian naira, and find the package that
-            works best for you.
-        </p>
-    </section>
-
-    <section class="stats">
-        <div class="stat">
-            <strong>&#8358; NGN</strong>
-            <small>NAIRA PRICING</small>
-        </div>
-
-        <div class="stat">
-            <strong>Premium</strong>
-            <small>COIN PACKAGES</small>
-        </div>
-
-        <div class="stat">
-            <strong>24/7</strong>
-            <small>ONLINE ACCESS</small>
-        </div>
-    </section>
-
-    <section>
-        <div class="section-heading">
-            <div>
-                <h2>Premium Packages</h2>
-                <p>Find your perfect coin package.</p>
-            </div>
-
-            <div class="currency">&#8358; NIGERIAN NAIRA</div>
-        </div>
-
-        <div class="products">
-
-            <article class="product">
-                <div class="coin-icon">🪙</div>
-
-                <h3>Starter Pack</h3>
-
-                <p class="description">
-                    A simple starter package for new customers.
-                </p>
-
-                <div class="price">&#8358;5,000</div>
-
-                <div class="amount">1,000 Coins</div>
-
-                <button class="buy-btn" onclick="buyPackage('Starter Pack')">
-                    SELECT PACKAGE →
-                </button>
-            </article>
-
-            <article class="product featured">
-                <div class="popular">MOST POPULAR</div>
-
-                <div class="coin-icon">💰</div>
-
-                <h3>Gold Pack</h3>
-
-                <p class="description">
-                    A premium package for customers who want more.
-                </p>
-
-                <div class="price">&#8358;15,000</div>
-
-                <div class="amount">3,500 Coins</div>
-
-                <button class="buy-btn" onclick="buyPackage('Gold Pack')">
-                    SELECT PACKAGE →
-                </button>
-            </article>
-
-            <article class="product">
-                <div class="coin-icon">👑</div>
-
-                <h3>Elite Pack</h3>
-
-                <p class="description">
-                    Our bigger package for premium coin buyers.
-                </p>
-
-                <div class="price">&#8358;30,000</div>
-
-                <div class="amount">8,000 Coins</div>
-
-                <button class="buy-btn secondary" onclick="buyPackage('Elite Pack')">
-                    SELECT PACKAGE →
-                </button>
-            </article>
-
-        </div>
-    </section>
-
-    <div class="note">
-        <strong>PLEASE NOTE:</strong>
-        The prices and coin amounts displayed above are sample values.
-        Replace them with your actual package details before accepting orders.
-        The package buttons are placeholders until you connect a real ordering
-        or payment system.
+<section class="card">
+  <div class="section-head">
+    <div class="step">1</div>
+    <div>
+      <h2 class="section-title">Choose your coin package</h2>
+      <p class="section-subtitle">Select a package to see your order total.</p>
     </div>
+  </div>
+
+  <div class="packages" id="packages">
+
+    <button class="package selected" data-coins="30" data-price="276" type="button">
+      <span class="coin-icon">🪙</span>
+      <strong>30 Coins</strong>
+      <small>₦276</small>
+      <div class="old">Was ₦460</div>
+      <span class="off">40% OFF</span>
+    </button>
+
+    <button class="package" data-coins="50" data-price="456" type="button">
+      <span class="coin-icon">🪙</span>
+      <strong>50 Coins</strong>
+      <small>₦456</small>
+      <div class="old">Was ₦760</div>
+      <span class="off">40% OFF</span>
+    </button>
+
+    <button class="package" data-coins="100" data-price="900" type="button">
+      <span class="coin-icon">🪙</span>
+      <strong>100 Coins</strong>
+      <small>₦900</small>
+      <div class="old">Was ₦1,500</div>
+      <span class="off">40% OFF</span>
+    </button>
+
+    <button class="package" data-coins="200" data-price="1860" type="button">
+      <span class="coin-icon">🪙</span>
+      <strong>200 Coins</strong>
+      <small>₦1,860</small>
+      <div class="old">Was ₦3,100</div>
+      <span class="off">40% OFF</span>
+    </button>
+
+    <button class="package custom" data-coins="custom" data-price="0" type="button">
+      <span class="coin-icon">✦</span>
+      <strong>Custom amount</strong>
+      <small>Choose your own coins</small>
+    </button>
+
+  </div>
+
+  <div class="custom-box" id="customBox">
+    <label class="label" for="customCoins">Number of coins (30–2,500,000)</label>
+    <input
+      id="customCoins"
+      type="number"
+      inputmode="numeric"
+      min="30"
+      max="2500000"
+      step="1"
+      placeholder="Enter coin amount"
+    >
+    <p class="hint">
+      Custom total is an estimate based on ₦15.50 per coin with a 40% discount.
+      Actual supplier pricing may vary.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <div class="section-head">
+    <div class="step">2</div>
+    <div>
+      <h2 class="section-title">Confirm your TikTok account</h2>
+      <p class="section-subtitle">Check the username carefully before continuing.</p>
+    </div>
+  </div>
+
+  <label class="label" for="username">TikTok username</label>
+  <input
+    id="username"
+    type="text"
+    maxlength="24"
+    autocomplete="off"
+    placeholder="e.g. @yourusername"
+  >
+
+  <p class="hint">
+    This preview does not verify the account or fetch a real TikTok profile photo.
+  </p>
+
+  <div class="account-row">
+    <div class="avatar" id="avatar">?</div>
+    <div>
+      <strong id="previewUsername">@yourusername</strong>
+      <small id="accountStatus">Your username preview will appear here.</small>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="section-head">
+    <div class="step">3</div>
+    <div>
+      <h2 class="section-title">Review your order</h2>
+      <p class="section-subtitle">Check the details before you continue.</p>
+    </div>
+  </div>
+
+  <div class="price-row">
+    <span>TikTok account</span>
+    <strong id="summaryUser">@yourusername</strong>
+  </div>
+
+  <div class="price-row">
+    <span>Coin package</span>
+    <strong id="summaryCoins">30 Coins</strong>
+  </div>
+
+  <div class="price-row">
+    <span>Discount</span>
+    <strong>40%</strong>
+  </div>
+
+  <div class="price-row total">
+    <span>Estimated total</span>
+    <strong id="summaryPrice">₦276</strong>
+  </div>
+
+  <button class="primary" id="reviewBtn" type="button">Review order</button>
+
+  <div class="result" id="result"></div>
+
+  <div class="notice">
+    <strong>Prototype only:</strong> this page does not accept payments, submit or store orders, or deliver Coins.
+    Never enter your TikTok password or card details here.
+    Verify that your supply and resale method are permitted before selling.
+  </div>
+</section>
 
 </main>
 
 <footer>
-    © <span id="year"></span> Kelvin Coins. All rights reserved.
+  <span>Kelvin Coins</span> · Premium storefront preview
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+const packageButtons = [...document.querySelectorAll('.package')];
+const customBox = document.getElementById('customBox');
+const customCoinsInput = document.getElementById('customCoins');
+const usernameInput = document.getElementById('username');
 
-function buyPackage(packageName) {
-    alert(
-        "You selected the " + packageName +
-        ".\n\nThe ordering system has not been connected yet."
-    );
+let selected = {
+  coins: 30,
+  price: 276,
+  custom: false
+};
+
+const money = n =>
+  '\u20A6' + Math.round(n).toLocaleString('en-NG');
+
+function currentCoins() {
+  if (!selected.custom) return selected.coins;
+
+  const n = Number(customCoinsInput.value);
+
+  return Number.isInteger(n) && n >= 30 && n <= 2500000
+    ? n
+    : null;
 }
+
+function currentPrice() {
+  if (!selected.custom) return selected.price;
+
+  const n = currentCoins();
+
+  return n === null ? null : n * 15.5 * 0.6;
+}
+
+function normalizedUsername() {
+  let u = usernameInput.value.trim().replace(/\s/g, '');
+
+  if (u && !u.startsWith('@')) {
+    u = '@' + u;
+  }
+
+  return u;
+}
+
+function update() {
+  const coins = currentCoins();
+  const price = currentPrice();
+  const username = normalizedUsername() || '@yourusername';
+
+  document.getElementById('summaryUser').textContent = username;
+  document.getElementById('previewUsername').textContent = username;
+
+  document.getElementById('avatar').textContent =
+    username.length > 1
+      ? username.replace('@', '').charAt(0).toUpperCase()
+      : '?';
+
+  document.getElementById('accountStatus').textContent =
+    usernameInput.value.trim()
+      ? 'Username preview only — account not verified'
+      : 'Your username preview will appear here.';
+
+  document.getElementById('summaryCoins').textContent =
+    coins === null
+      ? 'Enter a valid amount'
+      : coins.toLocaleString('en-NG') + ' Coins';
+
+  document.getElementById('summaryPrice').textContent =
+    price === null ? '—' : money(price);
+
+  document.getElementById('reviewBtn').disabled =
+    !usernameInput.value.trim() || coins === null;
+}
+
+packageButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    packageButtons.forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+
+    selected.custom = btn.dataset.coins === 'custom';
+
+    customBox.classList.toggle('show', selected.custom);
+
+    if (!selected.custom) {
+      selected = {
+        coins: Number(btn.dataset.coins),
+        price: Number(btn.dataset.price),
+        custom: false
+      };
+    }
+
+    document.getElementById('result').classList.remove('show');
+    update();
+  });
+});
+
+customCoinsInput.addEventListener('input', () => {
+  document.getElementById('result').classList.remove('show');
+  update();
+});
+
+usernameInput.addEventListener('input', () => {
+  document.getElementById('result').classList.remove('show');
+  update();
+});
+
+document.getElementById('reviewBtn').addEventListener('click', () => {
+  const coins = currentCoins();
+  const price = currentPrice();
+  const username = normalizedUsername();
+
+  if (!username || coins === null || price === null) return;
+
+  const result = document.getElementById('result');
+
+  result.replaceChildren();
+
+  const title = document.createElement('strong');
+  title.textContent = 'Order preview';
+
+  result.append(
+    title,
+    document.createElement('br'),
+    document.createTextNode('Account: ' + username),
+    document.createElement('br'),
+    document.createTextNode(
+      'Package: ' + coins.toLocaleString('en-NG') + ' Coins'
+    ),
+    document.createElement('br'),
+    document.createTextNode('Estimated total: ' + money(price)),
+    document.createElement('br'),
+    document.createElement('br'),
+    document.createTextNode(
+      'Check the username carefully. No order or payment has been submitted.'
+    )
+  );
+
+  result.classList.add('show');
+});
+
+update();
 </script>
 
 </body>
