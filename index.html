@@ -857,6 +857,37 @@ document.getElementById("reviewBtn")
 
 update();
 </script>
+<script>
+const KELVIN_COINS_API =
+  "https://oeswhetvhzlapqyyiysf.supabase.co/functions/v1/create-order";
+
+async function createKelvinCoinsOrder(username, coinAmount) {
+  try {
+    const response = await fetch(KELVIN_COINS_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        coin_amount: Number(coinAmount)
+      })
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || "Could not create order.");
+    }
+
+    console.log("Kelvin Coins order created:", result);
+    return result;
+  } catch (error) {
+    console.error("Kelvin Coins order error:", error);
+    throw error;
+  }
+}
+</script>
 
 </body>
 </html>
