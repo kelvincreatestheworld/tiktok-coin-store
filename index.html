@@ -6,19 +6,8 @@
 <meta name="theme-color" content="#09070f">
 
 <title>Kelvin Coins | Premium Coin Store</title>
-<meta name="description" content="Kelvin Coins Premium Store">
 
 <style>
-:root {
-    --bg: #09070f;
-    --card: #151020;
-    --gold: #ffd166;
-    --purple: #9b5cff;
-    --green: #00e6a0;
-    --text: #ffffff;
-    --muted: #b8b0c9;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -26,29 +15,14 @@
 }
 
 body {
-    min-height: 100vh;
     font-family: Arial, sans-serif;
-    color: var(--text);
+    color: #fff;
+    min-height: 100vh;
     background:
-        radial-gradient(ellipse at 15% 15%, rgba(155,92,255,.28), transparent 40%),
-        radial-gradient(ellipse at 85% 30%, rgba(255,209,102,.18), transparent 35%),
-        radial-gradient(ellipse at 50% 100%, rgba(0,230,160,.12), transparent 45%),
-        var(--bg);
-    overflow-x: hidden;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,.025),
-        transparent 40%,
-        rgba(155,92,255,.04)
-    );
-    z-index: -1;
+        radial-gradient(ellipse at 15% 15%, rgba(155,92,255,.35), transparent 40%),
+        radial-gradient(ellipse at 85% 30%, rgba(255,209,102,.25), transparent 35%),
+        radial-gradient(ellipse at 50% 100%, rgba(0,230,160,.18), transparent 45%),
+        #09070f;
 }
 
 .container {
@@ -58,36 +32,32 @@ body::before {
 
 header {
     padding: 24px 0;
-    border-bottom: 1px solid rgba(255,255,255,.1);
-    background: rgba(9,7,15,.7);
-    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,.12);
+    background: rgba(9,7,15,.65);
 }
 
 .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
+    gap: 12px;
 }
 
 .logo {
     font-size: 23px;
     font-weight: 900;
-    letter-spacing: -1px;
 }
 
 .logo span {
-    color: var(--gold);
+    color: #ffd166;
 }
 
 .badge {
-    border: 1px solid rgba(255,209,102,.4);
-    color: var(--gold);
-    padding: 8px 13px;
+    padding: 8px 12px;
     border-radius: 30px;
+    border: 1px solid rgba(255,209,102,.5);
+    color: #ffd166;
     font-size: 11px;
-    font-weight: bold;
-    background: rgba(255,209,102,.07);
 }
 
 .hero {
@@ -100,8 +70,8 @@ header {
     padding: 9px 15px;
     border: 1px solid rgba(155,92,255,.5);
     border-radius: 30px;
-    background: rgba(155,92,255,.12);
     color: #d5b8ff;
+    background: rgba(155,92,255,.12);
     font-size: 12px;
     margin-bottom: 23px;
 }
@@ -110,7 +80,6 @@ header {
     font-size: clamp(38px, 7vw, 72px);
     line-height: 1.05;
     font-weight: 900;
-    letter-spacing: -2.5px;
 }
 
 .hero h1 span {
@@ -121,7 +90,7 @@ header {
 }
 
 .hero p {
-    color: var(--muted);
+    color: #b8b0c9;
     max-width: 530px;
     margin: 22px auto 0;
     line-height: 1.8;
@@ -138,20 +107,20 @@ header {
 .stat {
     padding: 20px 10px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.1);
     border-radius: 17px;
-    background: rgba(255,255,255,.035);
+    background: rgba(255,255,255,.045);
 }
 
 .stat strong {
     display: block;
     font-size: 19px;
-    color: var(--gold);
+    color: #ffd166;
     margin-bottom: 7px;
 }
 
 .stat small {
-    color: var(--muted);
+    color: #b8b0c9;
     font-size: 11px;
 }
 
@@ -168,13 +137,13 @@ header {
 }
 
 .section-heading p {
-    color: var(--muted);
+    color: #b8b0c9;
     font-size: 12px;
     margin-top: 7px;
 }
 
 .currency {
-    color: var(--green);
+    color: #00e6a0;
     font-size: 12px;
     font-weight: bold;
     padding: 9px 12px;
@@ -193,34 +162,28 @@ header {
 .product {
     position: relative;
     padding: 25px;
-    overflow: hidden;
     border-radius: 22px;
-    border: 1px solid rgba(255,255,255,.1);
-    background: linear-gradient(
-        145deg,
-        rgba(35,25,52,.95),
-        rgba(15,11,24,.96)
-    );
-    box-shadow: 0 12px 40px rgba(0,0,0,.2);
-    transition: transform .25s, border-color .25s, box-shadow .25s;
+    border: 1px solid rgba(255,255,255,.12);
+    background: linear-gradient(145deg, #231934, #0f0b18);
+    box-shadow: 0 12px 40px rgba(0,0,0,.25);
+    transition: .25s;
 }
 
 .product:hover {
     transform: translateY(-6px);
-    border-color: rgba(255,209,102,.55);
-    box-shadow: 0 15px 40px rgba(155,92,255,.12);
+    border-color: rgba(255,209,102,.6);
+    box-shadow: 0 15px 40px rgba(155,92,255,.15);
 }
 
 .product.featured {
     border-color: rgba(255,209,102,.5);
-    box-shadow: 0 0 30px rgba(255,209,102,.07);
 }
 
 .popular {
     position: absolute;
     top: 16px;
     right: 15px;
-    background: var(--gold);
+    background: #ffd166;
     color: #171019;
     padding: 6px 9px;
     border-radius: 20px;
@@ -236,13 +199,8 @@ header {
     border-radius: 18px;
     font-size: 32px;
     margin-bottom: 22px;
-    background: linear-gradient(
-        135deg,
-        rgba(255,209,102,.2),
-        rgba(155,92,255,.2)
-    );
+    background: linear-gradient(135deg, rgba(255,209,102,.2), rgba(155,92,255,.2));
     border: 1px solid rgba(255,209,102,.2);
-    box-shadow: 0 0 25px rgba(255,209,102,.07);
 }
 
 .product h3 {
@@ -250,8 +208,8 @@ header {
     margin-bottom: 9px;
 }
 
-.product .description {
-    color: var(--muted);
+.description {
+    color: #b8b0c9;
     font-size: 12px;
     line-height: 1.6;
     min-height: 38px;
@@ -261,14 +219,8 @@ header {
     margin: 22px 0 8px;
     font-size: 30px;
     font-weight: 900;
-    color: var(--gold);
+    color: #ffd166;
     letter-spacing: -1px;
-}
-
-.price small {
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0;
 }
 
 .amount {
@@ -290,36 +242,30 @@ header {
     color: #171019;
     background: linear-gradient(90deg, #ffd166, #ffe7a3);
     cursor: pointer;
-    transition: opacity .2s, transform .2s;
-}
-
-.buy-btn:hover {
-    opacity: .9;
-    transform: scale(1.02);
 }
 
 .buy-btn.secondary {
-    color: white;
+    color: #fff;
     background: linear-gradient(90deg, #7040c7, #a16cff);
 }
 
 .note {
     padding: 20px;
     margin-bottom: 60px;
-    border: 1px solid rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.1);
     border-radius: 15px;
-    color: var(--muted);
-    background: rgba(255,255,255,.025);
+    color: #b8b0c9;
+    background: rgba(255,255,255,.03);
     font-size: 12px;
     line-height: 1.8;
 }
 
 .note strong {
-    color: var(--gold);
+    color: #ffd166;
 }
 
 footer {
-    border-top: 1px solid rgba(255,255,255,.08);
+    border-top: 1px solid rgba(255,255,255,.1);
     padding: 27px 0;
     text-align: center;
     color: #847b96;
@@ -327,7 +273,7 @@ footer {
 }
 
 footer span {
-    color: var(--gold);
+    color: #ffd166;
 }
 
 @media (max-width: 760px) {
@@ -360,14 +306,6 @@ footer span {
     .stat strong {
         font-size: 16px;
     }
-
-    .hero h1 {
-        letter-spacing: -1.5px;
-    }
-
-    .section-heading h2 {
-        font-size: 21px;
-    }
 }
 </style>
 </head>
@@ -393,15 +331,14 @@ footer span {
 
         <p>
             Welcome to Kelvin Coins. Explore our premium coin packages,
-            check prices in Nigerian naira, and find the package that
-            works best for you.
+            view prices in Nigerian naira, and find your ideal package.
         </p>
     </section>
 
     <section class="stats">
         <div class="stat">
-            <strong>₦ NGN</strong>
-            <small>NAIRA PRICING</small>
+            <strong>&#8358; NGN</strong>
+            <small>NIGERIAN NAIRA</small>
         </div>
 
         <div class="stat">
@@ -422,22 +359,20 @@ footer span {
                 <p>Find your perfect coin package.</p>
             </div>
 
-            <div class="currency">₦ NIGERIAN NAIRA</div>
+            <div class="currency">&#8358; NGN</div>
         </div>
 
         <div class="products">
 
             <article class="product">
                 <div class="coin-icon">🪙</div>
-
                 <h3>Starter Pack</h3>
 
                 <p class="description">
                     A simple starter package for new customers.
                 </p>
 
-                <div class="price">₦5,000</div>
-
+                <div class="price">&#8358;5,000</div>
                 <div class="amount">1,000 Coins</div>
 
                 <button class="buy-btn" onclick="buyPackage('Starter Pack')">
@@ -447,17 +382,14 @@ footer span {
 
             <article class="product featured">
                 <div class="popular">MOST POPULAR</div>
-
                 <div class="coin-icon">💰</div>
-
                 <h3>Gold Pack</h3>
 
                 <p class="description">
                     A premium package for customers who want more.
                 </p>
 
-                <div class="price">₦15,000</div>
-
+                <div class="price">&#8358;15,000</div>
                 <div class="amount">3,500 Coins</div>
 
                 <button class="buy-btn" onclick="buyPackage('Gold Pack')">
@@ -467,15 +399,13 @@ footer span {
 
             <article class="product">
                 <div class="coin-icon">👑</div>
-
                 <h3>Elite Pack</h3>
 
                 <p class="description">
                     Our bigger package for premium coin buyers.
                 </p>
 
-                <div class="price">₦30,000</div>
-
+                <div class="price">&#8358;30,000</div>
                 <div class="amount">8,000 Coins</div>
 
                 <button class="buy-btn secondary" onclick="buyPackage('Elite Pack')">
@@ -488,16 +418,15 @@ footer span {
 
     <div class="note">
         <strong>PLEASE NOTE:</strong>
-        The prices and coin amounts displayed above are sample values.
-        Replace them with your actual package details before accepting orders.
-        The package buttons are placeholders until you connect a real ordering
-        or payment system.
+        These are sample prices and coin amounts. Replace them with your
+        actual package details. The purchase buttons are placeholders and
+        do not process payments.
     </div>
 
 </main>
 
 <footer>
-    © <span id="year"></span> Kelvin Coins. All rights reserved.
+    &copy; <span id="year"></span> Kelvin Coins. All rights reserved.
 </footer>
 
 <script>
